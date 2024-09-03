@@ -1,0 +1,80 @@
+<body>
+<mat-toolbar color="primary">
+  <button mat-icon-button routerLink="/" color="btn-info" aria-label="Example icon button with a home icon">
+    <mat-icon>home</mat-icon>
+  </button>
+  <div class="navigator">
+  <span >Teacher's Portal</span>
+   
+  <button routerLink="/Login" mat-mini-fab color="btn-danger" class="btn btn-danger mx-3" style=" position: absolute;right: -5px;"><mat-icon>settings_power</mat-icon></button>
+        </div>
+ </mat-toolbar>
+<div class="container">
+  <div class="mt-3">
+    <button class="btn btn-success" mat-flat-button color="accent" (click)="clickAddStudent()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Add record <mat-icon>account_circle</mat-icon></button>
+</div>
+<table  class="table mt-3">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">Roll Number</th>
+            <th scope="col">Name</th>
+            <th scope="col">DOB</th>
+            <th scope="col">Score</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let loop of studentData">
+            <td>{{loop.rollNo}}</td>
+            <td>{{loop.name}}</td>
+            <td>{{loop.dob}}</td>
+            <td>{{loop.score}}</td>
+            <td>
+                <button type="button" class="btn btn-info" mat-mini-fab color="btn-info" (click)="editStudents(loop)" data-bs-toggle="modal" data-bs-target="#exampleModal"><mat-icon>create</mat-icon></button>
+                <button type="submit" (click)="deleteStudents(loop)" mat-mini-fab color="btn-danger" class="btn btn-danger mx-3"><mat-icon>delete</mat-icon></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Student Details</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="formValue">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Roll number</label>
+                    <input type="number" formControlName="rollNo" class="form-control"> 
+                  </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail2" class="form-label">Name</label>
+                  <input type="text" formControlName="name" class="form-control">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword3" class="form-label">DOB</label>
+                  <input type="date" formControlName="dob" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail4" class="form-label">Score</label>
+                    <input type="number" formControlName="score" class="form-control">
+                    
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" *ngIf="showAdd" (click)="postStudentDetails()" class="btn btn-primary">Add</button>
+                    <button type="submit" *ngIf="showUpdate" (click)="updateStudentDetails()" class="btn btn-primary">Update</button>
+                  </div>
+              </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</body>

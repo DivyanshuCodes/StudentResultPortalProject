@@ -1,0 +1,34 @@
+<body>
+ <mat-toolbar color="primary">
+    <button mat-icon-button routerLink="/" color="btn-info" aria-label="Example icon button with a home icon">
+      <mat-icon>home</mat-icon>
+    </button>
+    <div class="navigator">
+    <span >Student's Result Portal</span>
+          </div>
+   </mat-toolbar>
+
+<div class="container">
+    <div class="d-flex justify-content-end mx-3 align-items-center"><button type="button" routerLink="/StudentPage" class="btn btn-primary my-4">Back</button></div>
+    <h1 class="d-flex justify-content-center align-items-center fw-bold" style="background-color: black; color:white;">Result</h1>   
+    <table style="width:100%">
+      <tr>
+        <th>Roll number</th>
+        <td>{{studentData.rollNo}}</td> 
+      </tr>
+      <tr>
+        <th>Name</th>
+        <td>{{studentData.name}}</td>
+      </tr>
+      <tr>
+        <th>Date of birth</th>
+        <td>{{studentData.dob}}</td>
+      </tr>
+      <tr>
+        <th>Final score</th>
+        <td>{{studentData.score}}</td>
+      </tr>
+    </table>
+    
+</div>
+    </body>

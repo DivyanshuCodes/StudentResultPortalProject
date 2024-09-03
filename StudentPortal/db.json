@@ -1,0 +1,55 @@
+{
+  "StudentDetails": [
+    {
+      "id": 6,
+      "rollNo": 2,
+      "name": "Bapan Ghosh",
+      "dob": "2022-11-15",
+      "score": 300
+    },
+    {
+      "id": 7,
+      "rollNo": 1,
+      "name": "Divyanshu Chouhan",
+      "dob": "2000-10-26",
+      "score": 500
+    },
+    {
+      "id": 8,
+      "rollNo": 3,
+      "name": "Vikrant Khajuria",
+      "dob": "2001-09-27",
+      "score": 10
+    },
+    {
+      "id": 9,
+      "rollNo": 21,
+      "name": "Sample User",
+      "dob": "2022-11-09",
+      "score": 100
+    }
+  ],
+  "SignupUsers": [
+    {
+      "id": 1,
+      "username": "some comment",
+      "email": "abc@gmail.com",
+      "password": "abc"
+    },
+    {
+      "username": "Divyanshu Chouhan",
+      "email": "divyanshu.chouhan@gmail.com",
+      "password": "Dc@123",
+      "id": 2
+    },
+    {
+      "username": "bapan",
+      "email": "bapan@gmail.com",
+      "password": "bapan",
+      "id": 3
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

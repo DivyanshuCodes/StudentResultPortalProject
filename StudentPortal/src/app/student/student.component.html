@@ -1,0 +1,23 @@
+
+<body>
+    <mat-toolbar color="primary">
+      <button mat-icon-button routerLink="/" color="btn-info" aria-label="Example icon button with a home icon">
+        <mat-icon>home</mat-icon>
+      </button>
+      <div class="navigator">
+      <span >Student's Result Portal</span>
+            </div>
+     </mat-toolbar>
+<div class="container">
+    <form [formGroup]="searchForm"  class="mt-3" (ngSubmit)="searchStudent()" method="post">
+        <div class="mb-3">
+          <label class="form-label">Roll Number</label>
+          <input type="number" formControlName="rollNo" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Date of birth</label>
+          <input type="date" formControlName="dob" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+</div>
